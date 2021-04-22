@@ -1,0 +1,5 @@
+
+import random
+
+
+#type definition
