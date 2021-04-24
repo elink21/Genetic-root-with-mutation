@@ -46,7 +46,7 @@ class GA:
             generation.append(C)
         self.population.append(generation)
 
-    def tournament(self, generation: List[Chromosome]) -> List:
+    def tournament(self, generation: List[Chromosome]) -> List[Chromosome]:
         winners: List[Chromosome] = []
 
         challengers = [x for x in range(len(generation))]
@@ -160,7 +160,7 @@ class GA:
         print("~~~~~~~~~~~~New generation is~~~~~~~~~~~~~\n")
         for chromosome in newGen:
             print(chromosome)
-            
+
         self.population.append(newGen)
 
 
