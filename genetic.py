@@ -163,11 +163,21 @@ class GA:
 
         self.population.append(newGen)
 
+    def evolve(self):
+        for _ in range(self.generations):
+            self.newGen()
+
 
 def f(x, y, z): return x+y**2+z**3
 
 
-x = GA(6,  0, [0, 10], f)
+populationSize = int(input("Enter population size: "))
+generations = int(input("Enter generation number: "))
+a, b = [int(x) for x in input(
+    "Enter range, separated by spaces: ").split(" ")]
+
+
+x = GA(populationSize,  generations, [a, b], f)
 
 x.createInitialPopulation()
 
@@ -178,4 +188,4 @@ for i in range(len(x.population)):
         print(chromosome)
 
 
-x.newGen()
+x.evolve()
